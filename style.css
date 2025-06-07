@@ -1,166 +1,251 @@
-/* =============================================
-   🔹 RESET DEFAULT STYLES
-   This ensures a consistent layout by resetting margins, padding, and box-sizing across all elements.
-============================================= */
-* {
-  margin: 0;               /* Removes the default margin for all elements */
-  padding: 0;              /* Removes the default padding for all elements */
-  box-sizing: border-box;  /* Includes padding and border in the element's total width and height */
-}
-
-/* =============================================
-   🔹 BODY STYLES
-   Setting up default background, font, text color, and line spacing.
-============================================= */
 body {
-  font-family: Arial, sans-serif; /* Default font for the body of the page */
-  background: #ffffff;           /* White background for the page */
-  color: #e65100;                /* Orange color for the text */
-  width: 90%;                     /* Content width is 90% of the page */
-  margin: auto;                   /* Centers the page content horizontally */
-  line-height: 1.6;               /* Line height for improved readability */
+
+background: #eeeeee;
+
+font-family: Arial, sans-serif;
+
+text-align: center;
+
+padding: 2rem;
+
 }
 
-/* =============================================
-   🔹 ELEMENT STYLES (h1, h2, p)
-   These styles apply to the heading and paragraph elements for consistent typography.
-============================================= */
-h1, h2, p {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font-family for headings and paragraphs */
-  color: #e65100;               /* Orange color for headings and paragraphs */
+
+/* Heading style */
+
+h1 {
+
+color: #ff9800;
+
+margin-bottom: 2rem;
+
 }
 
-/* =============================================
-   🔹 CONTAINER STYLES
-   Defines a central container with max width and padding.
-============================================= */
-.container {
-  max-width: 1000px; /* Sets a maximum width for the container */
-  margin: auto;      /* Centers the container horizontally */
-  padding: 20px;     /* Adds padding inside the container */
+
+/* === GALLERY CONTAINER === */
+
+/* Use CSS Grid to layout 2 rows x 2 columns for image animation */
+
+.gallery {
+
+--size: min(60vmin, 400px);
+
+position: relative;
+
+margin: auto;
+
+box-shadow:
+
+0 0 10px #0002,
+
+0 20px 40px -20px #0004;
+
+width: var(--size);
+
+height: var(--size);
+
+background: #fff;
+
+border: 6px solid #fff;
+
+display: grid;
+
+grid-template-rows: 50% 50%;
+
+grid-template-columns: 1fr 1fr;
+
+overflow: hidden;
+
+gap: 6px;
+
 }
 
-/* =============================================
-   🔹 HEADER STYLES
-   Specific styles for the header section with background color and text formatting.
-============================================= */
-header {
-  background-color: #ff9800; /* Bright orange background for the header */
-  color: #ffffff;            /* White text color */
-  text-align: center;        /* Centers the text inside the header */
-  padding: 40px 0;           /* Adds padding to the top and bottom of the header */
-  text-transform: uppercase; /* Makes the header text uppercase */
+
+/* === BASE IMAGE STYLE === */
+
+.gallery img {
+
+width: 100%;
+
+height: 100%;
+
+object-fit: cover;
+
+object-position: 0 0; /* Start from top-left */
+
 }
 
-/* =============================================
-   🔹 SECTION STYLES
-   Sections with white background, left border, and rounded corners.
-============================================= */
-section {
-  background: #ffffff;         /* White background for each section */
-  margin: 20px 0;               /* Adds space between sections */
-  padding: 20px;                /* Padding inside sections */
-  border-left: 5px solid #ff9800; /* Orange left border to highlight sections */
-  border-radius: 8px;           /* Rounded corners for sections */
+
+/* === ANIMATIONS (KEYFRAMES) === */
+
+/* Define how images move, shrink, or grow */
+
+@keyframes moveHorizontal { to { object-position: 100% 0; } }
+
+@keyframes moveVertical { to { object-position: 0 100%; } }
+
+@keyframes shrinkVertical { to { height: 0; } }
+
+@keyframes shrinkHorizontal { to { width: 0; } }
+
+@keyframes growHorizontal { to { width: 100%; } }
+
+@keyframes growVertical { to { height: 100%; } }
+
+@keyframes growAll { to { width: 100%; height: 100%; } }
+
+
+/* === ASSIGN ANIMATIONS TO EACH IMAGE === */
+
+/* Note: Students can change timing or animation types for each image */
+
+
+.gallery img:nth-child(1) {
+
+grid-column: 1;
+
+grid-row: 1;
+
+justify-self: end;
+
+animation:
+
+moveHorizontal 8.5s 0.5s 1,
+
+shrinkHorizontal 2s 9s ease-in 1;
+
+animation-fill-mode: forwards;
+
 }
 
-/* =============================================
-   🔹 SECTION HEADER STYLES
-   Specific styles for headings within each section.
-============================================= */
-section h2 {
-  color: #e65100;    /* Orange color for the section header */
-  font-size: 28px;    /* Font size for the section header */
-  margin-bottom: 15px; /* Adds space below the section header */
+
+.gallery img:nth-child(2) {
+
+grid-column: 2;
+
+grid-row: 1;
+
+justify-self: end;
+
+animation:
+
+shrinkHorizontal 2s 11s 1;
+
+animation-fill-mode: forwards;
+
 }
 
-/* =============================================
-   🔹 BEFORE PSEUDO-ELEMENTS FOR SECTION HEADINGS
-   Adds a star symbol before the section heading to make it visually distinct.
-============================================= */
-section h2::before {
-  content: "★ ";         /* Adds a star symbol before the section heading */
-  color: #fb8c00;        /* Orange color for the star */
+
+.gallery img:nth-child(3) {
+
+grid-row: 2;
+
+grid-column: 1 / 3; /* Span both columns */
+
+align-self: end;
+
+animation:
+
+moveVertical 5s 1s 1,
+
+shrinkVertical 3s 5s 1;
+
+animation-fill-mode: forwards;
+
 }
 
-/* =============================================
-   🔹 PROJECTS LIST STYLES
-   Specific styles for list items inside the projects section.
-============================================= */
-.projects ul li {
-  list-style: square inside; /* Adds a square list style inside the list items */
-  margin-bottom: 8px;         /* Adds space between list items */
-  font-weight: bold;          /* Makes the text bold in list items */
+
+.gallery img:nth-child(4) {
+
+grid-column: 1 / 3;
+
+grid-row: 1;
+
+width: 0;
+
+justify-self: center;
+
+align-self: start;
+
+animation:
+
+growHorizontal 2.25s 11s 1,
+
+moveHorizontal 4s 14s 1,
+
+shrinkVertical 2s 18s 1;
+
+animation-fill-mode: forwards;
+
 }
 
-/* =============================================
-   🔹 ALTERNATING LIST ITEM COLORS
-   Applies alternating colors to the odd and even list items.
-============================================= */
-.projects ul li:nth-child(odd) {
-  color: #e65100; /* Dark orange for odd items */
-}
-.projects ul li:nth-child(even) {
-  color: #ffb74d; /* Light orange for even items */
+
+.gallery img:nth-child(5) {
+
+grid-column: 1;
+
+grid-row: 2;
+
+width: 0;
+
+justify-self: start;
+
+align-self: end;
+
+animation:
+
+growHorizontal 2.5s 7.5s 1,
+
+moveVertical 4s 12.5s 1,
+
+shrinkHorizontal 2s 17s 1;
+
+animation-fill-mode: forwards;
+
 }
 
-/* =============================================
-   🔹 FIRST LETTER AND FIRST LINE STYLES IN ABOUT SECTION
-   Enhances the first letter and the first line of paragraphs in the about section.
-============================================= */
-.about p::first-letter {
-  font-size: 24px;       /* Increases the font size of the first letter */
-  font-weight: bold;     /* Makes the first letter bold */
-  color: #f57c00;        /* Applies a brighter orange color to the first letter */
+
+.gallery img:nth-child(6) {
+
+grid-column: 2;
+
+grid-row: 2;
+
+width: 0;
+
+justify-self: end;
+
+align-self: end;
+
+animation:
+
+growHorizontal 2s 8s 1,
+
+shrinkHorizontal 2s 17s 1;
+
+animation-fill-mode: forwards;
+
 }
 
-.about p::first-line {
-  color: #ff9800;        /* Applies a strong orange color to the first line */
-}
 
-/* =============================================
-   🔹 HOVER EFFECT FOR LINKS
-   Changes the color and adds an underline effect when a link is hovered.
-============================================= */
-a:hover {
-  color: #ff5722;         /* Changes the link color to a stronger orange when hovered */
-  text-decoration: underline; /* Underlines the link when hovered */
-}
+.gallery img:nth-child(7) {
 
-/* =============================================
-   🔹 ICON STYLE IN CONTACT SECTION
-   Applies a specific color to phone icons in the contact section.
-============================================= */
-.contact p i[class*="phone"] {
-  color: #1976d2; /* Blue color for phone icons to make them stand out */
-}
+grid-column: 1 / 3;
 
-/* =============================================
-   🔹 FOOTER STYLES
-   Defines the styling for the page footer with a background color and centered text.
-============================================= */
-footer {
-  background-color: #e65100; /* Dark orange background for the footer */
-  color: #ffffff;            /* White text in the footer */
-  text-align: center;        /* Centers the footer content */
-  padding: 20px;             /* Adds padding inside the footer */
-  margin-top: 30px;          /* Adds space above the footer */
-}
+grid-row: 1 / 3; /* Full screen */
 
-/* =============================================
-   🔹 FOOTER FIRST PARAGRAPH STYLES
-   Specifically styles the first paragraph inside the footer.
-============================================= */
-footer p:first-of-type {
-  font-weight: bold;         /* Makes the first paragraph text bold */
-  font-size: 18px;           /* Sets a larger font size for the first paragraph */
-  color: #fff3e0;            /* Light cream color for emphasis */
-}
+width: 0;
 
-/* =============================================
-   🔹 CONTACT CONTAINER BORDER STYLES
-   Adds a top border with a light blue color to the contact container.
-============================================= */
-.contact.container {
-  border-top: 3px solid #90caf9; /* Light blue border at the top of the contact section */
+justify-self: end;
+
+align-self: end;
+
+animation:
+
+growHorizontal 2s 20s 1,
+
+moveHorizontal 16s 21.5s 1;
+
+animation-fill-mode: forwards;
+
 }
