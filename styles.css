@@ -654,90 +654,109 @@ cite {
     padding: 1.5rem;
   }
 }
-/* ===== Register Page Styles ===== */
-.register-section {
-  max-width: 450px;
-  margin: 4rem auto;
-  padding: 2rem;
+/* Container for the entire form page */
+.register-page {
+  max-width: 480px;
+  margin: 2rem auto;
+  padding: 1rem;
   background: #fff;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.register-section h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: 1.75rem;
-}
-
-.form-field {
+/* Form header/title */
+.register-page h2 {
   margin-bottom: 1rem;
-  text-align: left;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
-.form-field label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
+/* Global form controls */
+.register-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.form-field input[type="text"],
-.form-field input[type="email"],
-.form-field input[type="password"] {
-  width: 100%;
-  padding: 0.6rem 0.8rem;
+.register-page label {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.register-page input[type="text"],
+.register-page input[type="email"],
+.register-page input[type="password"] {
+  padding: 0.6rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.checkbox-field {
+.register-page .checkbox-group {
   display: flex;
   align-items: center;
-}
-
-.checkbox-field label {
-  font-weight: 400;
-}
-
-.error-message {
-  color: #e74c3c;
-  font-size: 0.85rem;
-  height: 1em;
-  margin-top: 0.25rem;
-  display: block;
-}
-
-.btn {
-  width: 100%;
-  margin: 1rem 0;
-}
-
-.social-login {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.social-login p {
-  margin: 0.5rem 0;
-  color: #555;
-}
-
-.signin-prompt {
-  text-align: center;
+  gap: 0.5rem;
   font-size: 0.9rem;
 }
 
-.signin-prompt a {
-  color: #1a73e8;
-  text-decoration: none;
+.register-page .btn-primary {
+  background: #333;
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
-@media (max-width: 480px) {
-  .register-section {
-    margin: 2rem 1rem;
-    padding: 1.5rem;
+.register-page .btn-secondary {
+  background: #fff;
+  color: #333;
+  border: 1px solid #333;
+}
+
+/* Align “sign up with Google” button */
+.register-page .social-signup {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+/* Footer layout */
+.site-footer {
+  margin-top: 3rem;
+  padding: 2rem 1rem;
+  background: #f8f8f8;
+  text-align: center;
+}
+
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.site-footer a {
+  color: #555;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 500px) {
+  .register-page {
+    margin: 1rem;
+    padding: 0.5rem;
   }
 }
+
+
 /* ===== Cart Page Styles ===== */
 
 .cart h2 {
