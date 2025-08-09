@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Shopping Cart – MENSWEAR</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html"><h1 class="logo">MENSWEAR</h1></a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Clothing</a></li>
+          <li><a href="#">Shoes</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="#">Sale</a></li>
+          <li><a href="#">Sign In</a></li>
+          <li><a href="#">Cart</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="cart container">
+      <h2>Shopping Cart</h2>
+      <div class="cart-content">
+        <!-- Cart Items -->
+        <div class="cart-items">
+          <!-- Item 1 -->
+          <div class="cart-item">
+            <div class="item-image">
+              <img src="https://via.placeholder.com/80" alt="Classic White Shirt" />
+            </div>
+            <div class="item-details">
+              <h3>Classic White Shirt</h3>
+              <p>Size: M | Color: White</p>
+              <p class="item-price">$59.99</p>
+              <div class="quantity-controls">
+                <button class="qty-btn">−</button>
+                <input type="number" value="1" min="1" />
+                <button class="qty-btn">+</button>
+              </div>
+            </div>
+            <button class="remove-item">Remove</button>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="cart-item">
+            <div class="item-image">
+              <img src="https://via.placeholder.com/80" alt="Slim Fit Jeans" />
+            </div>
+            <div class="item-details">
+              <h3>Slim Fit Jeans</h3>
+              <p>Size: 32 | Color: Blue</p>
+              <p class="item-price">$129.99</p>
+              <div class="quantity-controls">
+                <button class="qty-btn">−</button>
+                <input type="number" value="1" min="1" />
+                <button class="qty-btn">+</button>
+              </div>
+            </div>
+            <button class="remove-item">Remove</button>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="cart-item">
+            <div class="item-image">
+              <img src="https://via.placeholder.com/80" alt="Leather Sneakers" />
+            </div>
+            <div class="item-details">
+              <h3>Leather Sneakers</h3>
+              <p>Size: 10 | Color: Black</p>
+              <p class="item-price">$229.99</p>
+              <div class="quantity-controls">
+                <button class="qty-btn">−</button>
+                <input type="number" value="1" min="1" />
+                <button class="qty-btn">+</button>
+              </div>
+            </div>
+            <button class="remove-item">Remove</button>
+          </div>
+        </div>
+
+        <!-- Order Summary -->
+        <aside class="order-summary">
+          <h3>Order Summary</h3>
+          <div class="summary-line">
+            <span>Subtotal (3 items)</span>
+            <span>$419.97</span>
+          </div>
+          <div class="summary-line">
+            <span>Shipping</span>
+            <span>$9.99</span>
+          </div>
+          <div class="summary-line">
+            <span>Tax</span>
+            <span>$34.40</span>
+          </div>
+          <div class="summary-total">
+            <span>Total</span>
+            <span>$464.36</span>
+          </div>
+
+          <div class="promo-code">
+            <input
+              type="text"
+              placeholder="Enter promo code"
+            />
+            <button class="btn btn-secondary">Apply</button>
+          </div>
+
+          <a href="#" class="btn btn-primary checkout-btn">
+            Proceed to Checkout
+          </a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-links">
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Clothing</a></li>
+          <li><a href="#">Shoes</a></li>
+          <li><a href="#">Accessories</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <form class="newsletter-form">
+        <label for="newsEmail">Newsletter</label>
+        <input
+          type="email"
+          id="newsEmail"
+          placeholder="Your email address"
+        />
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="Twitter">🐦</a>
+        <a href="#" aria-label="Instagram">📸</a>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2025 MENSWEAR. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

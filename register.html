@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Create Account – MENSWEAR</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html"><h1 class="logo">MENSWEAR</h1></a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Sign In</a></li>
+          <li><a href="#" class="btn btn-secondary">Get Started</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="register-section container">
+      <h2>Create Your Account</h2>
+      <form id="registerForm" novalidate>
+        <!-- First Name -->
+        <div class="form-field">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" required />
+          <small class="error-message" id="firstNameError"></small>
+        </div>
+
+        <!-- Last Name -->
+        <div class="form-field">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" required />
+          <small class="error-message" id="lastNameError"></small>
+        </div>
+
+        <!-- Email -->
+        <div class="form-field">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+          />
+          <small class="error-message" id="emailError"></small>
+        </div>
+
+        <!-- Password -->
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="••••••••"
+            required
+          />
+          <small class="error-message" id="passwordError"></small>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-field">
+          <label for="confirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="••••••••"
+            required
+          />
+          <small class="error-message" id="confirmPasswordError"></small>
+        </div>
+
+        <!-- Terms & Submit -->
+        <div class="form-field checkbox-field">
+          <label>
+            <input
+              type="checkbox"
+              id="agree"
+              name="agree"
+              required
+            />
+            I agree to the Terms of Service and Privacy Policy
+          </label>
+          <small class="error-message" id="agreeError"></small>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          Create Account
+        </button>
+
+        <div class="social-login">
+          <p>or continue with</p>
+          <button type="button" class="btn btn-secondary">
+            Sign up with Google
+          </button>
+        </div>
+
+        <p class="signin-prompt">
+          Already have an account?
+          <a href="login.html">Sign In</a>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-links">
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Clothing</a></li>
+          <li><a href="#">Shoes</a></li>
+          <li><a href="#">Accessories</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <form class="newsletter-form">
+        <label for="newsEmail">Newsletter</label>
+        <input
+          type="email"
+          id="newsEmail"
+          placeholder="Your email address"
+        />
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="Twitter">🐦</a>
+        <a href="#" aria-label="Instagram">📸</a>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2025 MENSWEAR. All rights reserved.</p>
+  </footer>
+
+  <!-- Validation Script -->
+  <script>
+    document
+      .getElementById('registerForm')
+      .addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Elements
+        const firstNameEl = document.getElementById('firstName');
+        const lastNameEl = document.getElementById('lastName');
+        const emailEl = document.getElementById('email');
+        const passEl = document.getElementById('password');
+        const confirmEl = document.getElementById('confirmPassword');
+        const agreeEl = document.getElementById('agree');
+
+        // Error containers
+        const firstNameError = document.getElementById('firstNameError');
+        const lastNameError = document.getElementById('lastNameError');
+        const emailError = document.getElementById('emailError');
+        const passError = document.getElementById('passwordError');
+        const confirmError = document.getElementById('confirmPasswordError');
+        const agreeError = document.getElementById('agreeError');
+
+        // Reset errors
+        [
+          firstNameError,
+          lastNameError,
+          emailError,
+          passError,
+          confirmError,
+          agreeError,
+        ].forEach(el => (el.textContent = ''));
+
+        let valid = true;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const email = emailEl.value.trim();
+        const pass = passEl.value.trim();
+        const confirm = confirmEl.value.trim();
+        const firstName = firstNameEl.value.trim();
+        const lastName = lastNameEl.value.trim();
+        const MAX_PW = 128;
+        const MIN_PW = 8;
+
+        // First Name
+        if (!firstName) {
+          firstNameError.textContent = 'First name is required.';
+          valid = false;
+        }
+
+        // Last Name
+        if (!lastName) {
+          lastNameError.textContent = 'Last name is required.';
+          valid = false;
+        }
+
+        // Email
+        if (!email) {
+          emailError.textContent = 'Email is required.';
+          valid = false;
+        } else if (!emailPattern.test(email)) {
+          emailError.textContent = 'Enter a valid email address.';
+          valid = false;
+        }
+
+        // Password
+        if (!pass) {
+          passError.textContent = 'Password is required.';
+          valid = false;
+        } else if (pass.length < MIN_PW) {
+          passError.textContent = `Password must be at least ${MIN_PW} characters.`;
+          valid = false;
+        } else if (pass.length > MAX_PW) {
+          passError.textContent = `Password cannot exceed ${MAX_PW} characters.`;
+          valid = false;
+        }
+
+        // Confirm Password
+        if (!confirm) {
+          confirmError.textContent = 'Please confirm your password.';
+          valid = false;
+        } else if (confirm !== pass) {
+          confirmError.textContent = 'Passwords do not match.';
+          valid = false;
+        }
+
+        // Terms Checkbox
+        if (!agreeEl.checked) {
+          agreeError.textContent = 'You must agree to the terms.';
+          valid = false;
+        }
+
+        if (valid) {
+          this.submit();
+        }
+      });
+  </script>
+</body>
+</html>
