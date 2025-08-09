@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Contact Us – MENSWEAR</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Header (same as home page) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">MENSWEAR</h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Clothing</a></li>
+          <li><a href="#">Shoes</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="#">Sale</a></li>
+        </ul>
+      </nav>
+      <div class="header-icons">
+        <button aria-label="Search" class="icon-btn">🔍</button>
+        <button aria-label="Account" class="icon-btn">👤</button>
+        <button aria-label="Cart" class="icon-btn">🛒</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Contact Us Intro -->
+    <section class="contact-intro container">
+      <h2>Contact Us</h2>
+      <p class="subtitle">
+        Get in touch with our team. We're here to help you with any questions or inquiries you may have.
+      </p>
+      <div class="contact-methods">
+        <div class="contact-method">
+          <h4>Phone</h4>
+          <p>+1 (555) 123-4567<br/>Mon–Fri 9AM–6PM</p>
+        </div>
+        <div class="contact-method">
+          <h4>Email</h4>
+          <p>help@company.com<br/>support@company.com</p>
+        </div>
+        <div class="contact-method">
+          <h4>Office</h4>
+          <p>123 Business Street,<br/>New York, NY 10001</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Send us a Message -->
+    <section class="contact-form container">
+      <h3>Send us a Message</h3>
+      <form>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject">
+            <option>General Inquiry</option>
+            <option>Order Status</option>
+            <option>Product Question</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Find Us -->
+    <section class="find-us container">
+      <h3>Find Us</h3>
+      <p>Visit our office or schedule a meeting with our team.</p>
+      <div class="map-placeholder">Map Placeholder</div>
+      <address>
+        123 Business Street,<br/>
+        New York, NY 10001
+      </address>
+    </section>
+
+  </main>
+
+  <!-- Footer (same as home page) -->
+  <footer class="site-footer">
+    <div class="container footer-cta">
+      <h3>Ready to Upgrade Your Wardrobe?</h3>
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-primary">Shop Collection</a>
+        <a href="#" class="btn btn-secondary">Book Consultation</a>
+      </div>
+    </div>
+    <div class="container footer-links">
+      <div>
+        <h4>MENSWEAR</h4>
+        <p>Premium menswear for the modern gentleman.</p>
+      </div>
+      <ul>
+        <li><strong>Shop</strong></li>
+        <li><a href="#">New Arrivals</a></li>
+        <li><a href="#">Clothing</a></li>
+        <li><a href="#">Shoes</a></li>
+        <li><a href="#">Accessories</a></li>
+      </ul>
+      <ul>
+        <li><strong>Support</strong></li>
+        <li><a href="#">Size Guide</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <form class="newsletter-form">
+        <label for="newsEmail">Newsletter</label>
+        <input
+          type="email"
+          id="newsEmail"
+          placeholder="Your email address"
+        />
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="Twitter">🐦</a>
+        <a href="#" aria-label="Instagram">📸</a>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2023 MENSWEAR. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
