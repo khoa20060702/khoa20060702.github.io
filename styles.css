@@ -56,35 +56,68 @@ a {
 }
 
 /* Hero */
+/* Hero – side by side layout */
 .hero {
-  position: relative;
-  background: url('https://via.placeholder.com/1600x600') center/cover
-    no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 6rem 0;
-}
-.hero-overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-}
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-.hero-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-.hero-content p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-}
-.hero-buttons .btn {
-  margin: 0 0.5rem;
+  background: #f5f5f5;
+  padding: 4rem 0;
 }
 
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1 1 320px;
+  max-width: 500px;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.hero-buttons .btn {
+  margin-right: 0.75rem;
+}
+
+/* image container */
+.hero-image {
+  flex: 1 1 300px;
+  text-align: right;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .hero-image {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .hero-buttons .btn {
+    margin: 0.5rem;
+  }
+}
 /* Buttons */
 .btn {
   display: inline-block;
