@@ -1,85 +1,163 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8" />
-
-<title>Animated Image Gallery</title>
-
-<link rel="stylesheet" href="style.css" />
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MENSWEAR – Elevate Your Style</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
 </head>
-
 <body>
 
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">MENSWEAR</h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Clothing</a></li>
+          <li><a href="#">Shoes</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="#">Sale</a></li>
+        </ul>
+      </nav>
+      <div class="header-icons">
+        <button aria-label="Search" class="icon-btn">🔍</button>
+        <button aria-label="Account" class="icon-btn">👤</button>
+      </div>
+    </div>
+  </header>
 
-<!-- TODO: Add a main heading for your gallery -->
+  <!-- Main Banner -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h2>Elevate Your Style</h2>
+      <p>Discover premium menswear that defines modern sophistication. Formalwear that suits casual occasions.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-primary">Shop Now</a>
+        <a href="#" class="btn btn-secondary">View Collection</a>
+      </div>
+    </div>
+  </section>
 
-<h1><!-- Your gallery title here --></h1>
+  <main>
 
+    <!-- Shop by Category -->
+    <section class="categories container">
+      <h3>Shop by Category</h3>
+      <div class="category-grid">
+        <div class="category-card">
+          <img src="https://via.placeholder.com/300x200" alt="Formal Wear">
+          <h4>Formal Wear</h4>
+          <p>Premium suits and dress shirts for professionals.</p>
+        </div>
+        <div class="category-card">
+          <img src="https://via.placeholder.com/300x200" alt="Casual Wear">
+          <h4>Casual Wear</h4>
+          <p>Versatile everyday essentials and weekend wear.</p>
+        </div>
+        <div class="category-card">
+          <img src="https://via.placeholder.com/300x200" alt="Accessories">
+          <h4>Accessories</h4>
+          <p>Complete your look with premium accessories.</p>
+        </div>
+      </div>
+    </section>
 
-<!-- TODO: Create a gallery container -->
+    <!-- Featured Products -->
+    <section class="featured container">
+      <h3>Featured Products</h3>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="https://via.placeholder.com/300x300" alt="Premium Wool Suit">
+          <h4>Premium Wool Suit</h4>
+          <p class="price">$599</p>
+        </div>
+        <div class="product-card">
+          <img src="https://via.placeholder.com/300x300" alt="Cotton Dress Shirt">
+          <h4>Cotton Dress Shirt</h4>
+          <p class="price">$69</p>
+        </div>
+        <div class="product-card">
+          <img src="https://via.placeholder.com/300x300" alt="Plaque Buckle Belt">
+          <h4>Plaque Buckle Belt</h4>
+          <p class="price">$45</p>
+        </div>
+        <div class="product-card">
+          <img src="https://via.placeholder.com/300x300" alt="Oxford Leather Shoes">
+          <h4>Oxford Leather Shoes</h4>
+          <p class="price">$189</p>
+        </div>
+      </div>
+    </section>
 
-<div class="gallery">
+    <!-- Crafted for the Modern Man -->
+    <section class="values container">
+      <h3>Crafted for the Modern Man</h3>
+      <ul class="values-list">
+        <li>Premium quality materials</li>
+        <li>Tailored fits for every occasion</li>
+        <li>Attention to detail in every stitch</li>
+        <li>Personalized styling advice</li>
+      </ul>
+    </section>
 
+    <!-- Testimonials -->
+    <section class="testimonials container">
+      <h3>What Our Customers Say</h3>
+      <div class="testimonial-grid">
+        <blockquote>
+          <p>"Exceptional quality and perfect fit. The tailoring service is top-notch."</p>
+          <cite>— Michael Johnson</cite>
+        </blockquote>
+        <blockquote>
+          <p>"The new arrivals are always on trend. I love the variety of styles."</p>
+          <cite>— David Chen</cite>
+        </blockquote>
+        <blockquote>
+          <p>"Great customer service and fast shipping. Highly recommend."</p>
+          <cite>— Robert Smith</cite>
+        </blockquote>
+      </div>
+    </section>
 
-<!-- TODO: Insert 6–7 images of different categories -->
+  </main>
 
-<!-- Use class names such as nature, travel, fruit, water, etc. -->
-
-
-<!-- Example nature image -->
-
-<img
-
-src="https://via.placeholder.com/400x300?text=Forest"
-
-alt="nature forest"
-
-class="nature landscape"
-
->
-
-
-<!-- Example travel image -->
-
-<img
-
-src="https://via.placeholder.com/400x300?text=Beach"
-
-alt="travel beach"
-
-class="travel water"
-
->
-
-
-<!-- TODO: Add more images below -->
-
-<!-- Tip: Try using different class combinations.nature.water -->
-
-<!-- Each image can be used for animation or filtering using CSS -->
-
-
-<!-- Template to copy:
-
-<img
-
-src="https://via.placeholder.com/400x300?text=YourTextHere"
-
-alt="category description"
-
-class="your-class another-class"
-
->
-
--->
-
-
-</div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-cta">
+      <h3>Ready to Upgrade Your Wardrobe?</h3>
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-primary">Shop Collection</a>
+        <a href="#" class="btn btn-secondary">Book Consultation</a>
+      </div>
+    </div>
+    <div class="container footer-links">
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+      <form class="newsletter-form">
+        <label for="newsletter">Subscribe to our newsletter</label>
+        <input type="email" id="newsletter" placeholder="Your email address" />
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="Instagram">📸</a>
+        <a href="#" aria-label="Twitter">🐦</a>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2025 MENSWEAR. All rights reserved.</p>
+  </footer>
 
 </body>
-
 </html>
